@@ -59,7 +59,7 @@
                   type="button"
                   data-bs-toggle="tab"
                 >
-                  About us
+                  About Us
                 </button>
               </li>
             </ul>
@@ -75,11 +75,11 @@
       </div>
       <div>
         <main>
-          <Home v-if="page == 'mainPage'" v-on:view-cycle="toSpec" />
+          <HomePage v-if="page == 'mainPage'" v-on:view-cycle="toSpec" />
           <!-- if click for view-cycle event, activate toSepc function -->
         </main>
         <AddCycle v-if="page == 'addNewPage'" v-on:cycle-added="cycleAdded" />
-        <Specification
+        <SpecPage
           v-if="page == 'specPage'"
           v-bind:cycleId="viewSpec"
           v-on:edit-cycle="toEdit"
@@ -91,7 +91,7 @@
           v-bind:cycleId="editSpec"
           v-on:cycle-updated="cycleUpdated"
         />
-        <Aboutus v-if="page == 'aboutUs'" />
+        <AboutUsPage v-if="page == 'aboutUs'" />
       </div>
     </div>
   </div>
@@ -99,20 +99,20 @@
 
 <script>
 // impporting components
-import Home from "./components/Home";
+import HomePage from "./components/HomePage";
 import AddCycle from "./components/AddCycle";
-import Specification from "./components/Specification";
+import SpecPage from "./components/SpecPage";
 import EditCycle from "./components/EditCycle";
-import Aboutus from "./components/Aboutus";
+import AboutUsPage from "./components/AboutUsPage";
 
 export default {
   name: "App",
   components: {
-    Home,
+    HomePage,
     AddCycle,
-    Specification,
+    SpecPage,
     EditCycle,
-    Aboutus,
+    AboutUsPage,
   },
   data: function () {
     return {
@@ -151,7 +151,7 @@ export default {
       this.editSpec = cycleId;
       this.showAlert = false;
     },
-    cycleUpdated: function (cycleId) {
+    cycleUpdated: function () {
       this.page = "specPage";
       this.alertMessage = "The cycle has been updated";
       this.showAlert = true;
@@ -167,7 +167,7 @@ export default {
         this.showAlert = false;
       }, 2000);
     },
-    reviewAdded: function (cycleId) {
+    reviewAdded: function () {
       this.page = "specPage";
       this.alertMessage = "A review has been added";
       this.showAlert = true;

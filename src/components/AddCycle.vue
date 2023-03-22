@@ -285,7 +285,7 @@ export default {
   },
 
   methods: {
-    processAdd: async function (e) {
+    processAdd: async function () {
       if (!this.Brand) {
         this.showAlert = true; //to show alert message if brand is empty
         return;

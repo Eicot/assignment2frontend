@@ -222,7 +222,7 @@
 import axios from "axios";
 const API_URL = "https://assignment2.eicot.repl.co";
 export default {
-  name: "Specification",
+  name: "SpecPage",
   data: function () {
     return {
       allCycles: "",

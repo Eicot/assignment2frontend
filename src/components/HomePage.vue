@@ -73,7 +73,7 @@ import axios from "axios";
 import ShowCycle from "@/components/ShowCycle.vue";
 const API_URL = "https://assignment2.eicot.repl.co";
 export default {
-  name: "Home",
+  name: "HomePage",
   components: {
     ShowCycle,
   },
