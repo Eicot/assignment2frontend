@@ -32,7 +32,7 @@
               <h2>{{ cycle1.Brand }}</h2>
               <h4>{{ cycle1.Model }}</h4>
               <p class="d-none d-md-block">
-                {{ cycle1.Description }} ..... <!-- slice to limit the text range-->
+                {{ cycle1.Description?.slice(1, 150) }} ..... <!-- slice to limit the text range-->
               </p>
               <button
                 type="button"
@@ -59,7 +59,7 @@
               <h2>{{ cycle2.Brand }}</h2>
               <h4>{{ cycle2.Model }}</h4>
               <p class="d-none d-md-block">
-                {{ cycle2.Description }} .....
+                {{ cycle2.Description?.slice(1, 150) }} .....
               </p>
               <button
                 type="button"
@@ -86,7 +86,7 @@
               <h2>{{ cycle3.Brand }}</h2>
               <h4>{{ cycle3.Model }}</h4>
               <p class="d-none d-md-block">
-                {{ cycle3.Description }}
+                {{ cycle3.Description?.slice(1, 150) }}
               </p>
               <button
                 type="button"

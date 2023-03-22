@@ -10,6 +10,7 @@
             ><img src="./assets/cyclelogo.jpg" width="120" height="100" />
           </a>
           <!-- Collapse Button for mobile responsive -->
+          
           <button
             class="navbar-toggler justify-content-end"
             type="button"

@@ -62,7 +62,7 @@
             <tr>
               <td>Colors Available:</td>
               <td>
-                {{ allCycles.ColorOptions.join(", ") }}
+                {{ allCycles.ColorOptions?.join(", ") }}
               </td>
             </tr>
             <tr class="blank_row">
@@ -75,39 +75,39 @@
             </tr>
             <tr class="data_row">
               <td>Bore:</td>
-              <td>{{ allCycles.Engine.Bore_mm }} mm</td>
+              <td>{{ allCycles.Engine?.Bore_mm }} mm</td>
             </tr>
             <tr class="data_row">
               <td>Cooling System:</td>
-              <td>{{ allCycles.Engine.CoolingSystem }}</td>
+              <td>{{ allCycles.Engine?.CoolingSystem }}</td>
             </tr>
             <tr class="data_row">
               <td>Cylinder:</td>
-              <td>{{ allCycles.Engine.Cylinder }}</td>
+              <td>{{ allCycles.Engine?.Cylinder }}</td>
             </tr>
             <tr class="data_row">
               <td>Displacement:</td>
-              <td>{{ allCycles.Engine.Displacement_ccm }} ccm</td>
+              <td>{{ allCycles.Engine?.Displacement_ccm }} ccm</td>
             </tr>
             <tr class="data_row">
               <td>Gearbox:</td>
-              <td>{{ allCycles.Engine.Gearbox }}</td>
+              <td>{{ allCycles.Engine?.Gearbox }}</td>
             </tr>
             <tr class="data_row">
               <td>Power:</td>
-              <td>{{ allCycles.Engine.Power_hp }} hp</td>
+              <td>{{ allCycles.Engine?.Power_hp }} hp</td>
             </tr>
             <tr class="data_row">
               <td>Stroke:</td>
-              <td>{{ allCycles.Engine.Stroke }}</td>
+              <td>{{ allCycles.Engine?.Stroke }}</td>
             </tr>
             <tr class="data_row">
               <td>Torque:</td>
-              <td>{{ allCycles.Engine.Torque_Nm }} Nm</td>
+              <td>{{ allCycles.Engine?.Torque_Nm }} Nm</td>
             </tr>
             <tr class="data_row">
               <td>Transmission Type:</td>
-              <td>{{ allCycles.Engine.TransmissionType }}</td>
+              <td>{{ allCycles.Engine?.TransmissionType }}</td>
             </tr>
 
             <tr class="blank_row">
@@ -120,15 +120,15 @@
             </tr>
             <tr class="data_row">
               <td>Fuel Capacity:</td>
-              <td>{{ allCycles.Fuel.Capacity_lts }} lts</td>
+              <td>{{ allCycles.Fuel?.Capacity_lts }} lts</td>
             </tr>
             <tr class="data_row">
               <td>Fuel Control:</td>
-              <td>{{ allCycles.Fuel.Control }}</td>
+              <td>{{ allCycles.Fuel?.Control }}</td>
             </tr>
             <tr class="data_row">
               <td>Fuel System:</td>
-              <td>{{ allCycles.Fuel.System }}</td>
+              <td>{{ allCycles.Fuel?.System }}</td>
             </tr>
 
             <tr class="blank_row">
@@ -141,39 +141,39 @@
             </tr>
             <tr class="data_row">
               <td>Weight:</td>
-              <td>{{ allCycles.Physical.DryWeight_kg }} kg</td>
+              <td>{{ allCycles.Physical?.DryWeight_kg }} kg</td>
             </tr>
             <tr class="data_row">
               <td>Seat Height:</td>
-              <td>{{ allCycles.Physical.SeatHeight_mm }} mm</td>
+              <td>{{ allCycles.Physical?.SeatHeight_mm }} mm</td>
             </tr>
             <tr class="data_row">
               <td>Wheelbase:</td>
-              <td>{{ allCycles.Physical.Wheelbase_mm }} mm</td>
+              <td>{{ allCycles.Physical?.Wheelbase_mm }} mm</td>
             </tr>
             <tr class="data_row">
               <td>Front Brakes:</td>
-              <td>{{ allCycles.Wheel.FrontBrakes }}</td>
+              <td>{{ allCycles.Wheel?.FrontBrakes }}</td>
             </tr>
             <tr class="data_row">
               <td>Rear Brakes:</td>
-              <td>{{ allCycles.Wheel.RearBrakes }}</td>
+              <td>{{ allCycles.Wheel?.RearBrakes }}</td>
             </tr>
             <tr class="data_row">
               <td>Front Suspension:</td>
-              <td>{{ allCycles.Wheel.FrontSuspension }}</td>
+              <td>{{ allCycles.Wheel?.FrontSuspension }}</td>
             </tr>
             <tr class="data_row">
               <td>Rear Suspension:</td>
-              <td>{{ allCycles.Wheel.RearSuspension }}</td>
+              <td>{{ allCycles.Wheel?.RearSuspension }}</td>
             </tr>
             <tr class="data_row">
               <td>Front Tire:</td>
-              <td>{{ allCycles.Wheel.FrontTire }}</td>
+              <td>{{ allCycles.Wheel?.FrontTire }}</td>
             </tr>
             <tr class="data_row">
               <td>Rear Tire:</td>
-              <td>{{ allCycles.Wheel.RearTire }}</td>
+              <td>{{ allCycles.Wheel?.RearTire }}</td>
             </tr>
             <tr class="blank_row">
               <td colspan="3">&nbsp;</td>
@@ -185,9 +185,10 @@
           <label class="col-form-label">Reviews: </label>
           <ul>
             <!-- To show motorcycle reviews-->
-            <li v-for="(r, index) in allCycles.Reviews" :key="index">
+<!--             <li v-for="(r, index) in allCycles.Reviews" :key="index">
               {{ r }}
-            </li>
+            </li> -->
+            <li> {{ Reviews }} </li>
           </ul>
         </div>
         <div class="row mb-3">
@@ -225,7 +226,7 @@ export default {
   data: function () {
     return {
       allCycles: "",
-      Reviews: [],
+      Reviews: "",
     };
   },
   props: ["cycleId"], //receive cycleId information from App.vue
