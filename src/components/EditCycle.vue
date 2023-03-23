@@ -326,6 +326,7 @@ export default {
       RearSuspension: "",
       RearTire: "",
       ColorOptions: "",
+      Reviews: "",
     };
   },
   props: ["cycleId"], //receive cycleId information from App.vue
@@ -360,6 +361,7 @@ export default {
     this.RearSuspension = response.data.Wheel.RearSuspension;
     this.RearTire = response.data.Wheel.RearTire;
     this.ColorOptions = response.data.ColorOptions.join(", ");
+    this.Reviews = response.data.Reviews;
   },
   methods: {
     processUpdate: async function (cycleId) {
@@ -392,6 +394,7 @@ export default {
         RearSuspension: this.RearSuspension,
         RearTire: this.RearTire,
         ColorOptions: this.ColorOptions.split(","), //to update string to array
+        Reviews: this.Reviews,
       });
       this.$emit("cycle-updated", cycleId); //to emit cycle-updated event to App.vue
     },
